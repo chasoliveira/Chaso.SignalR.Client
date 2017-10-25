@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chaso.SignalR.Client", "Chaso.SignalR.Client\Chaso.SignalR.Client.csproj", "{93476667-F945-4491-B50E-5A4A50F3066B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chaso.SignalR.Client.Test", "Chaso.SignalR.Client.Test\Chaso.SignalR.Client.Test.csproj", "{F814F3C3-E93A-4484-97AE-A172138867FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93476667-F945-4491-B50E-5A4A50F3066B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93476667-F945-4491-B50E-5A4A50F3066B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93476667-F945-4491-B50E-5A4A50F3066B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93476667-F945-4491-B50E-5A4A50F3066B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F814F3C3-E93A-4484-97AE-A172138867FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F814F3C3-E93A-4484-97AE-A172138867FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F814F3C3-E93A-4484-97AE-A172138867FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F814F3C3-E93A-4484-97AE-A172138867FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47B913FA-DE51-4F9D-BAC0-FC88DCDEC80B}
+	EndGlobalSection
+EndGlobal
