@@ -6,7 +6,7 @@ What is SignalR?
 ASP.NET SignalR is a library for ASP.NET developers that simplifies the process of adding real-time web functionality to applications. Real-time web functionality is the ability to have server code push content to connected clients instantly as it becomes available, rather than having the server wait for a client to request new data.
 
 ## Dependencies
-- .NetFramework 4.6.1
+- .NetFramework 4.5.1
 - Microsoft.AspNet.SignalR.Client 2.2.2
 - Newtonsoft.Json 10.0.3
 
