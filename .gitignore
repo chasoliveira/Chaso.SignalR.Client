@@ -30,7 +30,10 @@ bld/
 .nupkg
 # The packages folder can be ignored because of Package Restore
 packages/
+TestResult/
 
 # NuGet v3's project.json files produces more ignoreable files
 .nuget.props
 .nuget.targets
+.nuspec
+.nupkg

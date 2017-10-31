@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Chaso.SignalR.Client")]
-[assembly: AssemblyDescription("Chaso SignalR Client empower you to create a simple way to Connect in .Net SignalR Server")]
+[assembly: AssemblyTitle("Chaso.SignalR.Client.Sample")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ChasSOliveira")]
-[assembly: AssemblyProduct("Chaso.SignalR.Client")]
-[assembly: AssemblyCopyright("ChaSOliveira©  2017")]
-[assembly: AssemblyTrademark("ChasSOliveira")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Chaso.SignalR.Client.Sample")]
+[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("93476667-f945-4491-b50e-5a4a50f3066b")]
+[assembly: Guid("66cc1430-db3e-409b-b33a-1b591c8bd671")]
 
 // Version information for an assembly consists of the following four values:
 //

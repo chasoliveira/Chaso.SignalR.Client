@@ -8,8 +8,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>https://github.com/chasoliveira/Chaso.SignalR.Client</licenseUrl>
     <projectUrl>https://github.com/chasoliveira/Chaso.SignalR.Client/blob/master/LICENSE</projectUrl>
-    <description>A light client of signalR</description>
-    <copyright>ChaSOliveira 2017</copyright>
+    <description>Chaso SignalR Client empower you to create a simple way to Connect in .Net SignalR Server</description>
+    <copyright>Copyright ©2017 ChaSOliveira http://github.com/chasoliveira </copyright>
     <tags>Chasoliveira, Chaso, SignalR, C#, SignalR.Client</tags>
     <dependencies>
       <group targetFramework="net451">
@@ -19,6 +19,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="E:\Projetos\ChaSOliveira\Chaso.SignalR.Client\Chaso.SignalR.Client\bin\Release\Chaso.SignalR.Client.dll" target="lib\{framework name}[{version}]\Chaso.SignalR.Client.dll" />
+    <file src="E:\Projetos\ChaSOliveira\Chaso.SignalR.Client\Chaso.SignalR.Client\bin\Release\Chaso.SignalR.Client.dll" target="lib\net451\Chaso.SignalR.Client.dll" />
   </files>
 </package>
