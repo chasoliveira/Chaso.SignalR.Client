@@ -14,14 +14,19 @@ namespace Chaso.SignalR.Client.Test
         [TestMethod]
         public void MustListenSomeEventOnHub()
         {
-            var signalRCliente = new SignalR.Client.SignalRClient<ReturnChannel>("http://localhost:4478/signalr", "EventHub", "OnEvent");
+            var SignalRClienteCategory = "SignalRCliente";
+            var signalRCliente = new SignalR.Client.SignalRClient<object>("http://gppdev:4478/signalr", "EventHub", "OnEvent");
             signalRCliente.RegisterChannel("MessageIntegration");
-            signalRCliente.OnStart += (s, e) => Debug.WriteLine(e);
-            signalRCliente.OnStop += (s, e) => Debug.WriteLine(e);
-            signalRCliente.OnEventReceived += (s, e) => Debug.WriteLine(e.Data.Code);
+            signalRCliente.RegisterChannel("SourceIntegration");
+            signalRCliente.OnStart += (s, e) => Debug.WriteLine(e, SignalRClienteCategory);
+            signalRCliente.OnStop += (s, e) => Debug.WriteLine(e, SignalRClienteCategory);
+            signalRCliente.OnError += (s, e) => Debug.WriteLine(e, SignalRClienteCategory);
+            signalRCliente.OnConnectionSlow += (s, e) => Debug.WriteLine(e, SignalRClienteCategory);
+            signalRCliente.OnEventReceived += (s, e) => Debug.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(e.Data), SignalRClienteCategory);
 
-            Console.ReadKey();
-            
+            signalRCliente.Start();
+            System.Threading.Thread.Sleep(100000);
+            signalRCliente.Stop();
         }
     }
 }

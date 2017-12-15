@@ -12,6 +12,9 @@ namespace Chaso.SignalR.Client
 
         public event EventHandler<string> OnStart;
         public event EventHandler<string> OnStop;
+        public event EventHandler<string> OnError;
+        public event EventHandler<string> OnConnectionSlow;
+
         public event EventHandler<ChannelEvent<TResult>> OnEventReceived;
 
         HubConnection hubConnection;
@@ -34,11 +37,30 @@ namespace Chaso.SignalR.Client
 
         private void Initialize()
         {
-            hubConnection = new HubConnection(this.hubUrl);
-            eventHubProxy = hubConnection.CreateHubProxy(this.hubName);
-            eventHubProxy.On<string, ChannelEvent<TResult>>(this.eventName, OnEvent);
+            try
+            {
+                hubConnection = new HubConnection(this.hubUrl);
+                eventHubProxy = hubConnection.CreateHubProxy(this.hubName);
+                eventHubProxy.On<string, ChannelEvent<TResult>>(this.eventName, OnEvent);
+                hubConnection.EnsureReconnecting();
+                hubConnection.ConnectionSlow += HubConnection_ConnectionSlow;
+                hubConnection.Error += HubConnection_Error;
+                hubConnection.Start().Wait();
+            }
+            catch (Exception ex)
+            {
+                this.HubConnection_Error(ex);
+            }
+        }
 
-            hubConnection.Start().Wait();
+        private void HubConnection_ConnectionSlow()
+        {
+            this.OnError?.Invoke(this, $"The Connection {this.hubConnection.ConnectionId}, Last Error is: {this.hubConnection.LastError?.ToStringAllMessage()}");
+        }
+
+        private void HubConnection_Error(Exception ex)
+        {
+            this.OnError?.Invoke(this, ex.ToStringAllMessage());
         }
 
         private void OnEvent(string channel, ChannelEvent<TResult> ev)
@@ -97,6 +119,8 @@ namespace Chaso.SignalR.Client
     {
         event EventHandler<string> OnStart;
         event EventHandler<string> OnStop;
+        event EventHandler<string> OnError;
+        event EventHandler<string> OnConnectionSlow;
         event EventHandler<ChannelEvent<T>> OnEventReceived;
         void RegisterChannel(string channel);
         void UnregisterChannel(string channel);

@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChannelEvent.cs" />
+    <Compile Include="ExceptionExtension.cs" />
     <Compile Include="SignalRClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
