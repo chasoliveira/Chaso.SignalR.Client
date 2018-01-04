@@ -2,13 +2,17 @@
 <package >
   <metadata>
     <id>Chaso.SignalR.Client</id>
-    <version>1.0.0</version>
+    <version>1.0.3</version>
     <authors>Charles Silva Oliveira</authors>
     <owners>Charles Silva Oliveira</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>https://github.com/chasoliveira/Chaso.SignalR.Client</licenseUrl>
     <projectUrl>https://github.com/chasoliveira/Chaso.SignalR.Client/blob/master/LICENSE</projectUrl>
-    <description>Chaso SignalR Client empower you to create a simple way to Connect in .Net SignalR Server</description>
+    <description>
+      Chaso SignalR Client empower you to create a simple way to Connect in .Net SignalR Server, enforce the reconnection.
+      Add origin on event.
+      Create event when The maximum attempt to reconnect was achieved
+    </description>
     <copyright>Copyright ©2017 ChaSOliveira http://github.com/chasoliveira </copyright>
     <tags>Chasoliveira, Chaso, SignalR, C#, SignalR.Client</tags>
     <dependencies>

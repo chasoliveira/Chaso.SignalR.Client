@@ -11,23 +11,48 @@ namespace Chaso.SignalR.Client.Sample
     {
         static void Main(string[] args)
         {
-            var url = "http://localhost:4478/signalr";
-            var hubName = "MyHub";
+            var url = "http://gppdev:4478/signalr";
+            var hubName = "EventHub";
             var eventName = "OnEvent";
-            SignalRClient<MyModel> signalRClient = new SignalRClient<MyModel>(url, hubName, eventName);
-            signalRClient.RegisterChannel("MyChannel");
+            var signalRClient = new SignalRClient<object>(url, hubName, eventName);
+            signalRClient.RegisterChannel("SourceIntegration");
+            signalRClient.RegisterChannel("MessageIntegration");
+            signalRClient.RegisterChannel("Movimento");
+            signalRClient.RegisterChannel("Notificacao");
             signalRClient.OnEventReceived += SignalRClient_OnEventReceived;
+            signalRClient.OnConnectionSlow += SignalRClient_OnConnectionSlow;
+            signalRClient.OnStart += SignalRClient_OnStart;
+            signalRClient.OnStop += SignalRClient_OnStop;
+            signalRClient.OnError += SignalRClient_OnError;
+
+            signalRClient.Start();
+
+            Console.ReadKey();
         }
 
-        private static void SignalRClient_OnEventReceived(object sender, ChannelEvent<MyModel> e)
+        private static void SignalRClient_OnError(object sender, string e)
         {
-            //Do something...
-            Console.Write("Channel: {0}, Data Key: {1}, Data Value: {2}",e.ChannelName, e.Data.Key, e.Data.Value);
+            Console.WriteLine($"{e}");
         }
-    }
 
-    public class MyModel {
-        public string Key { get; set; }
-        public string Value { get; set; }
+        private static void SignalRClient_OnStop(object sender, string e)
+        {
+            Console.WriteLine($"{e}");
+        }
+
+        private static void SignalRClient_OnStart(object sender, string e)
+        {
+            Console.WriteLine($"{e}");
+        }
+
+        private static void SignalRClient_OnConnectionSlow(object sender, string e)
+        {
+            Console.WriteLine($"{e}");
+        }
+
+        private static void SignalRClient_OnEventReceived(object sender, ChannelEvent<object> e)
+        {
+            Console.WriteLine($"Channel: {e.ChannelName}, Data: {Newtonsoft.Json.JsonConvert.SerializeObject(e.Data)}");
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace Chaso.SignalR.Client
         {
             Timestamp = DateTimeOffset.Now;
         }
-
+        public string Origin { get; set; }
         public string Name { get; set; }
         public string ConnectionId { get; set; }
         public string ChannelName { get; set; }
